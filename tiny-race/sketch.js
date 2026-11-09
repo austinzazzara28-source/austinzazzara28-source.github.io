@@ -3,6 +3,14 @@ let startY = 50;
 let yStep = 60;
 let finishX = 560;
 let fuckY = 500
+let img;
+
+async function setup() {
+   img = await loadImage('/workspaces/austinzazzara28-source.github.io/tiny-race/sisyphus.png');
+
+  // Draw the image.
+  image(img, 0, 0);
+}
 
 function setup(){
     createCanvas(600, startY + yStep * racerXs.length);
@@ -15,9 +23,11 @@ function draw(){
     let y = startY + yStep * i;
     if (racerXs[i] < finishX) {
       racerXs[i] += random(1, 4);
+     
     }
     if (racerXs[i] >= fuckY) {
-        racerXs[i] -= random(1, 4)
+        racerXs[i] -= random(1, 4);
+         fill("blue");
     }
     
     
